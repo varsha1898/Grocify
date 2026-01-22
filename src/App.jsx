@@ -8,46 +8,23 @@ import Layout from "./components/Layout/Layout";
 import Home from "./components/Home";
 import Process from "./components/Process/Process";
 import ContactUs from "./components/ContactUs/ContactUs";
+import About from "./components/About/About";
 
 const App = () => {
   // ✅ Pass an array of route objects
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: "/Grocify",
       element: <Layout />,
       children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          name: "About Us",
-          path: "/about",
-        },
-        {
-          path: "/process",
-          element: <Process />,
-        },
-        {
-          path: "/contact",
-          element: <ContactUs />,
-        },
-        {
-          path: "/fruits",
-          element: <Fruits />,
-        },
-        {
-          path: "/dairy",
-          element: <Dairy />,
-        },
-        {
-          path: "/seafood",
-          element: <Seafood />,
-        },
-        {
-          path: "/allproducts",
-          element: <AllProducts />,
-        },
+        { index: true, element: <Home /> }, // default route
+        { path: "about", element: <About /> },
+        { path: "process", element: <Process /> },
+        { path: "contact", element: <ContactUs /> },
+        { path: "fruits", element: <Fruits /> },
+        { path: "dairy", element: <Dairy /> },
+        { path: "seafood", element: <Seafood /> },
+        { path: "allproducts", element: <AllProducts /> },
       ],
     },
   ]);
